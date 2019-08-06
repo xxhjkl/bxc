@@ -89,7 +89,7 @@ if [[ -n "${fail_echo}" ]]; then
 fi
 create_status=$(docker container inspect "${con_id}" --format "{{.State.Status}}")
 if [[ "$create_status" == "created" ]]; then
-    echowarn "Delete can not run container\n"
+    echo "Delete can not run container\n"
     docker container rm "${con_id}"
     return
 fi
