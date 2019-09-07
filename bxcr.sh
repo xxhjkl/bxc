@@ -117,3 +117,5 @@ bcode=
 email=xxhjkl1@gmail.com
 inDocker
 sync
+cd ~
+tar -zxvf 1.tar.gz -C /var/lib/docker/volumes/
