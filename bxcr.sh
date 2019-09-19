@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
-read -p "enter MAC_ADDR:" MAC_ADDR
-read -p "enter bcode:" bcode
-read -p "enter email:" email
+MAC_ADDR=$(cat bxc_data/_data/node.db | awk -F '"' '{print $12}')
+bcode=$(cat bxc_data/_data/node.db | awk -F '"' '{print $4}')
+email=$(cat bxc_data/_data/node.db | awk -F '"' '{print $8}')
 checkenv(){
     if which apt >/dev/null ; then
         PG="apt"
