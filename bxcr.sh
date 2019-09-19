@@ -109,13 +109,13 @@ getBcode
 fi
 }
 
-getBcode(){
+#getBcode(){
 #json=$(curl -fsSL "https://console.bonuscloud.io/api/bcode/getBcodeForOther/?email=${email}")
 #bcode_list=$(echo "${json}"|jq '.ret.non_mainland')
 #bcode=$(echo "${bcode_list}"|jq -r '.[]|.bcode'|head -1)
 #bcode=
 #checkBcode
-}
+#}
 
 #email=xxhjkl1@gmail.com
 inDocker
