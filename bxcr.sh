@@ -1,4 +1,7 @@
 #!/usr/bin/env bash 
+read -p "enter MAC_ADDR:" MAC_ADDR
+read -p "enter bcode:" bcode
+read -p "enter email:" email
 checkenv(){
     if which apt >/dev/null ; then
         PG="apt"
@@ -74,9 +77,9 @@ inDocker(){
 installDocker
 installjq
 docker pull qinghon/bxc-net:amd64
-getBcode
+#getBcode
 #MAC_ADDR=$(echo "08:06:C1:CB$(dd bs=1 count=2 if=/dev/random 2>/dev/null |hexdump -v -e '/1 ":%02X"')")
-MAC_ADDR=
+#MAC_ADDR=
 docker run -d --cap-add=NET_ADMIN --sysctl net.ipv6.conf.all.disable_ipv6=0 --device /dev/net/tun --restart=always --mac-address=$MAC_ADDR -e bcode=$bcode -e email=$email --name=bxc -v bxc_data:/opt/bcloud qinghon/bxc-net:amd64
 sleep 3
 # 检测绑定成功与否
@@ -110,11 +113,11 @@ getBcode(){
 #json=$(curl -fsSL "https://console.bonuscloud.io/api/bcode/getBcodeForOther/?email=${email}")
 #bcode_list=$(echo "${json}"|jq '.ret.non_mainland')
 #bcode=$(echo "${bcode_list}"|jq -r '.[]|.bcode'|head -1)
-bcode=
+#bcode=
 #checkBcode
 }
 
-email=xxhjkl1@gmail.com
+#email=xxhjkl1@gmail.com
 inDocker
 sync
 cd ~
