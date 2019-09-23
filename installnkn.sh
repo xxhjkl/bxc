@@ -11,7 +11,6 @@ installBbr(){
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh -O /tmp/bbrinstall.sh
 chmod +x /tmp/bbrinstall.sh
 bash /tmp/bbrinstall.sh
-/r
 }
 
 installNkn
