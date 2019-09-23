@@ -6,11 +6,12 @@ wget https://raw.githubusercontent.com/sxzcy/nkn-install/master/team/xxhjkl.sh -
 chmod +x /tmp/nkninstall.sh
 bash /tmp/nkninstall.sh
 }
+
 installBbr(){
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh -O /tmp/bbrinstall.sh
 chmod +x /tmp/bbrinstall.sh
 bash /tmp/bbrinstall.sh
-1
+/r
 }
 
 installNkn
