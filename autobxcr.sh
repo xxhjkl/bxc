@@ -1,5 +1,5 @@
 #!/bin/bash
-
+apt-get install sshpass -y
 cat $1 | while read mac ip
 do
     export SSHPASS=$2
