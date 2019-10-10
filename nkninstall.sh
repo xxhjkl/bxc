@@ -93,6 +93,7 @@ nknc wallet -n /opt/nknorg/wallet.json -c <<EOF
 $PSWD
 $PSWD
 EOF
+getChainDB
 initMonitor
 checkinstall
 }
@@ -262,13 +263,23 @@ echo -e "\033[32mNKN installed successfully（安装成功）\033[0m"
 echo -e "\033[32mWait about 10 minutes,Run 'nknc info -s' command to view node status（等待10分钟左右,运行‘nknc info -s’查看节点状态）\033[0m"
 fi
 }
+
+getChainDB(){
+rm -rf /opt/nknorg/ChainDB >>/dev/null 2>&1
+rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
+wget -t1 -T120 -P /tmp https://nkn.org/ChainDB_pruned_latest.tar.gz 
+tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
+checkChainDB
+}
+checkChainDB(){
+if [ ! -d "/opt/nknorg/ChainDB" ]
+then
+	echo -e "\033[31mDownload failed, try again.\033[0m"
+	killall -9 wget >>/dev/null 2>&1
+	getChainDB
+else
+systemctl start nkn-node.service
+fi
+}
 addr=NKNQJteAjj46fZpxTxQV88csYkG4xEiaTmMe
 initNKNMing
-getChainDB(){
-systemctl stop nkn-node.service
-rm -rf /opt/nknorg/ChainDB
-wget -t1 -T120 -P /tmp https://nkn.org/ChainDB_pruned_latest.tar.gz
-tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg
-systemctl start nkn-node.service
- }
-getChainDB
