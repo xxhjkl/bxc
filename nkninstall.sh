@@ -267,8 +267,8 @@ fi
 getChainDB(){
 rm -rf /opt/nknorg/ChainDB >>/dev/null 2>&1
 rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
-wget -t1 -T120 -P /tmp https://nkn.org/ChainDB_pruned_latest.tar.gz 
-tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
+wget -t1 -T120 -P /tmp https://storage.googleapis.com/nsnapshot/ChainDB_pruned_382338.tar.gz 
+tar zxvf /tmp/ChainDB_pruned_382338.tar.gz -C /opt/nknorg >>/dev/null 2>&1
 checkChainDB
 }
 checkChainDB(){
