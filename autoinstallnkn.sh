@@ -9,7 +9,7 @@ echo "tcp_bbr" >> /etc/modules-load.d/modules.conf
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
-wget https://raw.githubusercontent.com/sxzcy/nkn-install/master/team/xxhjkl.sh -O /tmp/nkninstall.sh
+wget https://raw.githubusercontent.com/xxhjkl/bxc/master/nkninstall.sh -O /tmp/nkninstall.sh
 chmod +x /tmp/nkninstall.sh
 bash /tmp/nkninstall.sh
 '
