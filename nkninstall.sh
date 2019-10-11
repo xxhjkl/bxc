@@ -265,6 +265,7 @@ fi
 }
 
 getChainDB(){
+systemctl stop nkn-node.service
 rm -rf /opt/nknorg/ChainDB >>/dev/null 2>&1
 rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
 wget -t1 -T120 -P /tmp https://storage.googleapis.com/nsnapshot/ChainDB_pruned_382338.tar.gz 
