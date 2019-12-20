@@ -247,7 +247,7 @@ if [ ! -d "/tmp/linux-$ARCH/" ]
  echo -e "\033[31m$(date +%F" "%T) Download failed, try again.\033[0m"
  downNkn
  else
- cp /tmp/linux-$ARCH/* /opt/nknorg
+ cp -rf /tmp/linux-$ARCH/* /opt/nknorg
  chmod +x /opt/nknorg/*
  echo -e "\033[32m$(date +%F" "%T) Nknd Download Successful.\033[0m"
 fi
