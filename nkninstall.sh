@@ -162,6 +162,8 @@ rm -rf /opt/nknorg/nknc
 rm -rf /opt/nknorg/nknd
 mv /tmp/linux-$ARCH/* /opt/nknorg
 chmod +x /opt/nknorg/*
+rm -rf /tmp/linux-$ARCH
+rm -rf /tmp/linux-$ARCH.zip
 checkupdate
 fi
 }
