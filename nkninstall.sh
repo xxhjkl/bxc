@@ -29,7 +29,7 @@ rm -rf /opt/nkn*
 rm -rf /usr/bin/nkn*
 mkdir /opt/nknorg
 PSWD=$RANDOM
-$PG update -y && $PG install wget curl unzip psmisc git -y
+$PG update -y && $PG install wget libxml2-utils curl unzip psmisc git -y
 getVER
 cat <<EOF > /opt/nknorg/config.json
 {
@@ -268,7 +268,11 @@ getChainDB(){
 systemctl stop nkn-node.service
 rm -rf /opt/nknorg/ChainDB >>/dev/null 2>&1
 rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
-wget -t1 -T120  https://storage.googleapis.com/nsnapshot/ChainDB_pruned_866256.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
+dbname=$(curl https://storage.googleapis.com/nsnapshot/  | xmllint --format -  | tail -n20 |  grep .tar.gz | awk -F ">"  '{print $2}' | awk -F "<"  '{print $1}')
+url1='https://storage.googleapis.com/nsnapshot/'
+url2=$url1$dbname
+echo $url2
+wget -t1 -T120  $url2 -O /tmp/ChainDB_pruned_latest.tar.gz
 tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
 checkChainDB
 }
