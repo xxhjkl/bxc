@@ -268,11 +268,8 @@ getChainDB(){
 systemctl stop nkn-node.service
 rm -rf /opt/nknorg/ChainDB >>/dev/null 2>&1
 rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
-dbname=$(curl https://storage.googleapis.com/nsnapshot/  | xmllint --format -  | tail -n20 |  grep .tar.gz | awk -F ">"  '{print $2}' | awk -F "<"  '{print $1}')
-url1='https://storage.googleapis.com/nsnapshot/'
-url2=$url1$dbname
-echo $url2
-wget -t1 -T120  $url2 -O /tmp/ChainDB_pruned_latest.tar.gz
+
+wget -t1 -T120  https://nkn.org/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
 tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
 checkChainDB
 }
