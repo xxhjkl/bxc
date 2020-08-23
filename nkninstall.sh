@@ -270,7 +270,8 @@ rm -rf /opt/nknorg/ChainDB >>/dev/null 2>&1
 rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
 
 #wget -t1 -T120  https://nkn.org/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
-wget --no-check-certificate https://image.moeclub.org/GoogleDrive/1kIaUVRznVP6yLnGtmk_afSKI9gJzXQgc -O /tmp/ChainDB_pruned_latest.tar.gz
+wget http://online.920926.xyz/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
+#wget --no-check-certificate https://image.moeclub.org/GoogleDrive/1kIaUVRznVP6yLnGtmk_afSKI9gJzXQgc -O /tmp/ChainDB_pruned_latest.tar.gz
 #wget -t1 -T120  http://107.172.221.175/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
 tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
 checkChainDB
