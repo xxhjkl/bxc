@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@xxhjkl 
-xxhjkl
-/
-bxc
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-bxc/nkninstall.sh
-@xxhjkl
-xxhjkl Update nkninstall.sh
-Latest commit 3ce9c2c on 17 Mar
- History
- 1 contributor
-300 lines (298 sloc)  8.67 KB
-  
 #!/bin/bash
 getArch(){
     ARCH=$(uname -m)
@@ -329,16 +298,3 @@ sleep 5
 curl --insecure --data ${secret} https://api.nknx.org/fast-deploy/callbacks/finish-install
 sleep 5
 curl --insecure --data ${secret} https://api.nknx.org/fast-deploy/callbacks/donated
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
