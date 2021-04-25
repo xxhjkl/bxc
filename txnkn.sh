@@ -278,7 +278,7 @@ rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
 #wget -t1 -T120  https://nkn.org/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
 #wget http://online.920926.xyz/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
 #tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
-curl http://3200.xyz:8000/ChainDB_pruned_latest.tar.gz | tar -zxf -  -C /opt/nknorg
+curl "https://50gb-1251449905.cos.na-siliconvalley.myqcloud.com/ChainDB_pruned_latest.tar.gz?q-sign-algorithm=sha1&q-ak=AKIDxYWFr4zDpqJHoGLWBfWYEJOC6AE2F5145jyQiOoyx8SOs-rriWWtxjTmMVfWtfjV&q-sign-time=1619351786;1619355386&q-key-time=1619351786;1619355386&q-header-list=&q-url-param-list=&q-signature=03d8b865d7c4ae55d1777360931118e5f9a35098&x-cos-security-token=GKckrr3IsndEl7dyLmN3PRXtM24xDsza4162b1cabdd045dabb0b5e77986c7d4cF_JGNJ9062rQUts2ilQpmSc3Cb9uM6ZXnDu9FqqtTYrpbknuRLnorWbnNuvvHKcJ-l9pRW_bj5ZS1O4QbP-lOarl6wveVUr7V9-3OQNcoUAc04r3T7jU3Oe-WEzc3pJjedebtTJpQZdq_UHgCh3yqDjm3C2GPKCCOG2Jlf-Gnds" | tar -zxf -  -C /opt/nknorg
 checkChainDB
 }
 checkChainDB(){
