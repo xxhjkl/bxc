@@ -25,6 +25,12 @@ getEnv(){
 initNKNMing(){
 getArch
 getEnv
+bash /usr/local/qcloud/YunJing/uninst.sh
+bash /usr/local/qcloud/stargate/admin/uninstall.sh
+bash /usr/local/qcloud/monitor/barad/admin/uninstall.sh
+systemctl stop tat_agent
+systemctl disable tat_agent
+rm -f /etc/systemd/system/tat_agent.service
 rm -rf /opt/nkn*
 rm -rf /usr/bin/nkn*
 mkdir /opt/nknorg
