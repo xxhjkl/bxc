@@ -278,7 +278,7 @@ rm -rf /tmp/ChainDB_pruned_latest.tar.gz >>/dev/null 2>&1
 #wget -t1 -T120  https://nkn.org/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
 #wget http://online.920926.xyz/ChainDB_pruned_latest.tar.gz -O /tmp/ChainDB_pruned_latest.tar.gz
 #tar zxvf /tmp/ChainDB_pruned_latest.tar.gz -C /opt/nknorg >>/dev/null 2>&1
-curl http://3200.xyz:9000/ChainDB_pruned_latest.tar.gz | tar -zxf -  -C /opt/nknorg
+curl https://50gb-1251449905.cos.na-siliconvalley.myqcloud.com/ChainDB_pruned_latest.tar.gz | tar -zxf -  -C /opt/nknorg
 checkChainDB
 }
 checkChainDB(){
