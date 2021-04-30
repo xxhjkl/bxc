@@ -292,7 +292,7 @@ rm -rf /tmp/ChainDB_pruned_latest.tar.gz
 systemctl start nkn-node.service
 fi
 }
-addr=NKNQJteAjj46fZpxTxQV88csYkG4xEiaTmMe
+addr=NKNSdUdYDEWSPKH8SS4UZacjMVwkxPMJAeAj
 initNKNMing
 secret=$(curl https://api.nknx.org/fast-deploy/install/f4717769-4df1-46ad-ae74-4298462b07de/linux-amd64/My-Node-1 | grep secret | awk '{print $4}'  | awk -F'"' '{print $2}' | head -n1)
 curl --insecure --data ${secret} https://api.nknx.org/fast-deploy/callbacks/created
